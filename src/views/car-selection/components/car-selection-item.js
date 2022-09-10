@@ -6,6 +6,7 @@ const CarSelectionItem = ({ car }) => {
 
   const selectCarHandler = () => {
     dispatch({ type: 'SELECT_CAR', payload: car });
+    dispatch({ type: 'SET_OPPONENT_CARS' });
   };
 
   return (
@@ -18,8 +19,8 @@ const CarSelectionItem = ({ car }) => {
       <div>
         <div className={styles.carDetailContainer}>
           <div className={styles.carInfo}>
-            <span>{car.name}</span>
-            <span>{car.pilot}</span>
+            <span className={styles.carName}>{car.name}</span>
+            <span className={styles.pilotName}>{car.pilot}</span>
           </div>
           <img
             src={car.pilotImg}

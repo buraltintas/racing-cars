@@ -1,12 +1,12 @@
 .carSelectionItem {
-  transform: translateX(10px);
+  transform: translateX(1px);
   cursor: pointer;
   transition: all 0.2s;
   width: 50%;
 }
 
 .carSelectionItem:hover {
-  transform: translateX(-10px);
+  transform: translateX(-20px);
 }
 
 .carImage {
@@ -14,14 +14,26 @@
   border-radius: 16px;
 }
 
+.carName {
+  font-size: 24px;
+  color: #666;
+  font-weight: 600;
+}
+
+.pilotName {
+  color: #444;
+  font-weight: 500;
+}
+
 .carDetailContainer {
+  position: relative;
   position: absolute;
-  left: -120px;
+  left: -180px;
   top: -30px;
   transform: translateX(-30px);
   background-color: rgba(255, 255, 255, 0.75);
   width: 180px;
-  padding: 8px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -43,6 +55,9 @@
 }
 
 .pilotImage {
+  position: absolute;
+  right: 10px;
+  top: -60px;
   width: 80px;
   border-radius: 16px;
 }

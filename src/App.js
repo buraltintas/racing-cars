@@ -4,8 +4,9 @@ import Race from './views/race';
 
 function App() {
   const selectedCar = useSelector((state) => state.selectedCar);
+  const state = useSelector((state) => state);
 
-  console.log(selectedCar);
+  console.log(state);
 
   return <div className='App'>{selectedCar ? <Race /> : <CarSelection />}</div>;
 }
