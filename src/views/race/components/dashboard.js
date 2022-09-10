@@ -21,7 +21,7 @@ const Dashboard = ({ racingCars, selectedCar }) => {
               <span>{i + 1}.</span> &nbsp;
               <span className={styles.carName}>{car.name}</span>
               {car.name === selectedCar.name && (
-                <span className={styles.youText}>Your Car</span>
+                <span className={styles.youText}>You</span>
               )}
             </div>
           </div>
