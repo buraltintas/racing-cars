@@ -12,3 +12,10 @@
   font-size: 18px;
   font-weight: 600;
 }
+
+.youText {
+  margin-left: 16px;
+  font-style: italic;
+  color: #777;
+  font-weight: 500;
+}

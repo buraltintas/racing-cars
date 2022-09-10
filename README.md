@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Racing Cars
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple racing game that you can select a Formula 1 car and race with 3 random cars. Built with React and Redux.
 
-## Available Scripts
+All cars have unique power (similar to real world ;)) that it effects the winner of the race :)
 
-In the project directory, you can run:
+Being stronger doesn't always mean you can win the race.
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Live demo: https://racing-cars.netlify.app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+<a href="https://ibb.co/h9tGxCJ"><img src="https://i.ibb.co/8sSynXL/Ekran-Resmi-2022-09-10-19-14-05.png" alt="Ekran-Resmi-2022-09-10-19-14-05" border="0" /></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<a href="https://ibb.co/8z01d1s"><img src="https://i.ibb.co/0BcHFH2/Ekran-Resmi-2022-09-10-19-14-39.png" alt="Ekran-Resmi-2022-09-10-19-14-39" border="0" /></a>
 
-### `npm run build`
+<a href="https://ibb.co/Cn5XrK6"><img src="https://i.ibb.co/wKNbvh7/Ekran-Resmi-2022-09-10-19-15-20.png" alt="Ekran-Resmi-2022-09-10-19-15-20" border="0" /></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<a href="https://ibb.co/xHTbtDL"><img src="https://i.ibb.co/Vm4Gct9/Ekran-Resmi-2022-09-10-19-15-37.png" alt="Ekran-Resmi-2022-09-10-19-15-37" border="0" /></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<a href="https://ibb.co/b3qXf9b"><img src="https://i.ibb.co/7z8K9mk/Ekran-Resmi-2022-09-10-19-16-01.png" alt="Ekran-Resmi-2022-09-10-19-16-01" border="0" /></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<a href="https://ibb.co/h8pq8Zs"><img src="https://i.ibb.co/KyC1yL6/Ekran-Resmi-2022-09-10-19-16-24.png" alt="Ekran-Resmi-2022-09-10-19-16-24" border="0" /></a>
 
-### `npm run eject`
+<a href="https://ibb.co/98HKBsq"><img src="https://i.ibb.co/h7FQrDK/Ekran-Resmi-2022-09-10-19-16-36.png" alt="Ekran-Resmi-2022-09-10-19-16-36" border="0" /></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You will need npm installed on your local machine.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+You can clone this repository to your local:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+  git clone https://github.com/buraltintas/racing-cars.git
+```
 
-## Learn More
+Go to the project directory:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  cd racing-cars
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Install required packages:
 
-### Code Splitting
+```bash
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Start development server on localhost:
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+  npm start
+```

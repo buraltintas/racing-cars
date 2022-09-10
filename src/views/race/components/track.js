@@ -137,7 +137,7 @@ const Track = () => {
       )}
 
       {(isRaceStarted || isRaceFinished) && (
-        <Dashboard racingCars={racingCars} />
+        <Dashboard racingCars={racingCars} selectedCar={selectedCar} />
       )}
     </div>
   );

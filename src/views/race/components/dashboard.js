@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './dashboard.module.css';
 
-const Dashboard = ({ racingCars }) => {
+const Dashboard = ({ racingCars, selectedCar }) => {
   const [sortedRacingCars, setSortedRacingCars] = useState([]);
 
   useEffect(() => {
@@ -20,6 +20,9 @@ const Dashboard = ({ racingCars }) => {
             <div className={styles.dashboardItem}>
               <span>{i + 1}.</span> &nbsp;
               <span className={styles.carName}>{car.name}</span>
+              {car.name === selectedCar.name && (
+                <span className={styles.youText}>Your Car</span>
+              )}
             </div>
           </div>
         );
