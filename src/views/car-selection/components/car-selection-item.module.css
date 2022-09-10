@@ -1,0 +1,14 @@
+.carSelectionItem {
+  transform: rotate(90deg) translateX(10px);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.carSelectionItem:hover {
+  transform: rotate(90deg) translateX(-10px);
+}
+
+.carImage {
+  width: 400%;
+  border-radius: 16px;
+}

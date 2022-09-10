@@ -1,0 +1,7 @@
+.cars {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 48px;
+  width: 100%;
+}
