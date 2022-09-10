@@ -3,10 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import styles from './track.module.css';
 import { getRandomSpeed } from '../../../utils/get-random-speed';
 
+let interval;
+
 const Track = () => {
   const dispatch = useDispatch();
   const { selectedCar, opponentCars, isRaceStarted, isRaceFinished } =
     useSelector((state) => state);
+
   useEffect(() => {
     const racingCars = [selectedCar, ...opponentCars];
 
@@ -15,6 +18,8 @@ const Track = () => {
         moveCarHandler(car);
       });
     }
+
+    return () => clearInterval(interval);
   }, [isRaceStarted]);
 
   useEffect(() => {
@@ -31,7 +36,7 @@ const Track = () => {
   };
 
   const moveCarHandler = (car) => {
-    setInterval(() => {
+    interval = setInterval(() => {
       dispatch({
         type: 'SET_NEW_PLACE',
         name: car.name,
@@ -77,6 +82,14 @@ const Track = () => {
     });
   };
 
+  const resetCars = () => {
+    dispatch({ type: 'RESET_CARS' });
+  };
+
+  const raceAgain = () => {
+    dispatch({ type: 'RACE_AGAIN' });
+  };
+
   return (
     <div className={styles.trackFieldContainer}>
       <div className={styles.trackField}>
@@ -104,19 +117,24 @@ const Track = () => {
       {renderOpponentCars()}
       {renderOpponentCarNames()}
 
-      <div className={styles.buttonsContainer}>
-        {!isRaceStarted && !isRaceFinished && (
+      {!isRaceStarted && !isRaceFinished && (
+        <div className={styles.buttonsContainer}>
           <button onClick={startRaceHandler} className={styles.startRaceButton}>
             Start The Race!
           </button>
-        )}
-        {!isRaceStarted && isRaceFinished && (
-          <div>
-            <button>Race Again!</button>
-            <button>Change My Car</button>
-          </div>
-        )}
-      </div>
+        </div>
+      )}
+
+      {!isRaceStarted && isRaceFinished && (
+        <div className={styles.buttonsContainer}>
+          <button onClick={raceAgain} className={styles.startRaceButton}>
+            Race Again!
+          </button>
+          <button onClick={resetCars} className={styles.startRaceButton}>
+            Change My Car
+          </button>
+        </div>
+      )}
     </div>
   );
 };

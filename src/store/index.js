@@ -37,12 +37,10 @@ const carsReducer = (state = initialState, action) => {
   }
 
   if (action.type === 'SET_RACE_STARTED') {
-    if (action.payload === true) {
-      return {
-        ...state,
-        isRaceStarted: action.payload,
-      };
-    }
+    return {
+      ...state,
+      isRaceStarted: action.payload,
+    };
   }
 
   if (action.type === 'SET_RACE_FINISHED') {
@@ -78,19 +76,28 @@ const carsReducer = (state = initialState, action) => {
     }
   }
 
-  if (action.type === 'RESET_OPPONENTS_CARS') {
-    const newArray = cars.filter((car) => car.name !== state.selectedCar.name);
+  if (action.type === 'RACE_AGAIN') {
+    const resetOpponentCars = state.opponentCars.map((car) => {
+      return { ...car, currentPlace: car.startPlace };
+    });
+
+    const resetSelectedCar = {
+      ...state.selectedCar,
+      currentPlace: state.selectedCar.startPlace,
+    };
+
     return {
       ...state,
-      opponentCars: newArray,
+      opponentCars: resetOpponentCars,
+      selectedCar: resetSelectedCar,
+      isRaceStarted: false,
+      isRaceFinished: false,
     };
   }
 
-  if (action.type === 'RESET_SELECTED_CAR') {
-    const newArray = cars.filter((car) => car.name === state.selectedCar.name);
+  if (action.type === 'RESET_CARS') {
     return {
-      ...state,
-      selectedCar: newArray,
+      ...initialState,
     };
   }
 
