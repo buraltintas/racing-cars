@@ -1,21 +1,13 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import CarSelection from './views/car-selection';
+import Race from './views/race';
 
 function App() {
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state);
+  const selectedCar = useSelector((state) => state.selectedCar);
 
-  console.log(state);
+  console.log(selectedCar);
 
-  const selectCarHandler = () => {
-    dispatch({ type: 'SELECT_CAR', payload: 'redbull' });
-  };
-
-  return (
-    <div className='App'>
-      <CarSelection />
-    </div>
-  );
+  return <div className='App'>{selectedCar ? <Race /> : <CarSelection />}</div>;
 }
 
 export default App;

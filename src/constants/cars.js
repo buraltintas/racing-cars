@@ -14,6 +14,12 @@ import vettel from './pilot-photos/vettel.png';
 
 export const cars = [
   {
+    name: 'Redbull',
+    pilot: 'Max Verstappen',
+    carImg: redbull,
+    pilotImg: verstappen,
+  },
+  {
     name: 'Mercedes',
     pilot: 'Lewis Hamilton',
     carImg: mercedes,
@@ -32,12 +38,7 @@ export const cars = [
     pilotImg: gasly,
   },
   { name: 'Mclaren', pilot: 'Lando Norris', carImg: mclaren, pilotImg: norris },
-  {
-    name: 'Redbull',
-    pilot: 'Max Verstappen',
-    carImg: redbull,
-    pilotImg: verstappen,
-  },
+
   {
     name: 'Aston Martin',
     pilot: 'Sebastian Vettel',

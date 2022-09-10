@@ -1,6 +1,9 @@
 .cars {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 8px;
   margin: 0 auto;
   margin-top: 48px;
   width: 100%;

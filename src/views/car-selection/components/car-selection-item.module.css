@@ -1,14 +1,48 @@
 .carSelectionItem {
-  transform: rotate(90deg) translateX(10px);
+  transform: translateX(10px);
   cursor: pointer;
   transition: all 0.2s;
+  width: 50%;
 }
 
 .carSelectionItem:hover {
-  transform: rotate(90deg) translateX(-10px);
+  transform: translateX(-10px);
 }
 
 .carImage {
-  width: 400%;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.carDetailContainer {
+  position: absolute;
+  left: -120px;
+  top: -30px;
+  transform: translateX(-30px);
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 180px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.carSelectionItem:hover .carDetailContainer {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.carInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pilotImage {
+  width: 80px;
   border-radius: 16px;
 }
