@@ -19,6 +19,9 @@ export const cars = [
     carImg: redbull,
     pilotImg: verstappen,
     speedRange: [19, 29],
+    startPlace: -390,
+    finishPlace: 550,
+    currentPlace: -390,
   },
   {
     name: 'Ferrari',
@@ -26,6 +29,9 @@ export const cars = [
     carImg: ferrari,
     pilotImg: leclerc,
     speedRange: [18, 28],
+    startPlace: -390,
+    finishPlace: 550,
+    currentPlace: -390,
   },
   {
     name: 'Mercedes',
@@ -33,6 +39,9 @@ export const cars = [
     carImg: mercedes,
     pilotImg: hamilton,
     speedRange: [17, 27],
+    startPlace: -390,
+    finishPlace: 550,
+    currentPlace: -390,
   },
   {
     name: 'Alphatauri',
@@ -40,6 +49,9 @@ export const cars = [
     carImg: alphatauri,
     pilotImg: gasly,
     speedRange: [14, 24],
+    startPlace: -390,
+    finishPlace: 550,
+    currentPlace: -390,
   },
   {
     name: 'Mclaren',
@@ -47,6 +59,9 @@ export const cars = [
     carImg: mclaren,
     pilotImg: norris,
     speedRange: [12, 22],
+    startPlace: -390,
+    finishPlace: 550,
+    currentPlace: -390,
   },
   {
     name: 'Aston Martin',
@@ -54,5 +69,8 @@ export const cars = [
     carImg: astonmartin,
     pilotImg: vettel,
     speedRange: [11, 21],
+    startPlace: -390,
+    finishPlace: 550,
+    currentPlace: -390,
   },
 ];

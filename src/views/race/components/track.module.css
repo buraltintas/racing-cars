@@ -11,7 +11,8 @@
   display: flex;
   flex-direction: column;
   gap: 100px;
-  background-color: rgba(0, 0, 0, 0.9);
+
+  background-image: url('../../../constants/asphalt.jpeg');
   box-shadow: inset 0 0 0 4px white;
 }
 
@@ -45,7 +46,7 @@
   top: 20px;
   left: -390px;
   height: 80px;
-  transition: all 1s;
+  transition: all 3s;
 }
 
 .opponentCar1 {
@@ -53,7 +54,7 @@
   top: 130px;
   left: -390px;
   height: 80px;
-  transition: all 1s;
+  transition: all 3s;
 }
 
 .opponentCar2 {
@@ -61,7 +62,7 @@
   top: 240px;
   left: -390px;
   height: 80px;
-  transition: all 1s;
+  transition: all 3s;
 }
 
 .opponentCar3 {
@@ -69,7 +70,7 @@
   top: 350px;
   left: -390px;
   height: 80px;
-  transition: all 1s;
+  transition: all 3s;
 }
 
 .carImage {
@@ -77,50 +78,57 @@
   border-radius: 16px;
 }
 
-.yourCarText {
+.carName {
   position: absolute;
-  color: #fafafa79;
+  color: #fafafa88;
   font-size: 36px;
   letter-spacing: 10px;
   font-style: italic;
   font-weight: 600;
-  top: 35px;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+.yourCarText {
+  top: 35px;
 }
 
 .opponentCarName1 {
-  position: absolute;
-  color: #fafafa79;
-  font-size: 36px;
-  letter-spacing: 10px;
-  font-style: italic;
-  font-weight: 600;
   top: 148px;
-  left: 50%;
-  transform: translate(-50%, 0);
 }
 
 .opponentCarName2 {
-  position: absolute;
-  color: #fafafa79;
-  font-size: 36px;
-  letter-spacing: 10px;
-  font-style: italic;
-  font-weight: 600;
   top: 252px;
-  left: 50%;
-  transform: translate(-50%, 0);
 }
 
 .opponentCarName3 {
-  position: absolute;
-  color: #fafafa79;
-  font-size: 36px;
-  letter-spacing: 10px;
-  font-style: italic;
-  font-weight: 600;
   top: 360px;
-  left: 50%;
-  transform: translate(-50%, 0);
+}
+
+.buttonsContainer {
+  width: 100%;
+}
+
+.startRaceButton {
+  letter-spacing: 1.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: #e00400;
+  color: #fff;
+  border: 2px solid #e00400;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 280px;
+  margin: 0 auto;
+  margin-top: 32px;
+  transition: all 0.3s;
+}
+
+.startRaceButton:hover {
+  border: 2px solid #fff;
 }

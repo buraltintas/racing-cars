@@ -1,8 +1,44 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './track.module.css';
+import { getRandomSpeed } from '../../../utils/get-random-speed';
 
 const Track = () => {
-  const { selectedCar, opponentCars } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const { selectedCar, opponentCars, isRaceStarted, isRaceFinished } =
+    useSelector((state) => state);
+  useEffect(() => {
+    const racingCars = [selectedCar, ...opponentCars];
+
+    if (isRaceStarted) {
+      racingCars.forEach((car) => {
+        moveCarHandler(car);
+      });
+    }
+  }, [isRaceStarted]);
+
+  useEffect(() => {
+    const racingCars = [selectedCar, ...opponentCars];
+
+    if (racingCars.some((car) => car.currentPlace >= 575)) {
+      dispatch({ type: 'SET_RACE_STARTED', payload: false });
+      dispatch({ type: 'SET_RACE_FINISHED', payload: true });
+    }
+  }, [selectedCar, opponentCars]);
+
+  const startRaceHandler = () => {
+    dispatch({ type: 'SET_RACE_STARTED', payload: true });
+  };
+
+  const moveCarHandler = (car) => {
+    setInterval(() => {
+      dispatch({
+        type: 'SET_NEW_PLACE',
+        name: car.name,
+        payload: getRandomSpeed(car.speedRange[1], car.speedRange[0]),
+      });
+    }, 1000);
+  };
 
   const opponentCarClassNames = (i) => {
     return `opponentCar${i + 1}`;
@@ -16,8 +52,9 @@ const Track = () => {
     return opponentCars.map((car, i) => {
       return (
         <div
+          key={car.name}
           className={styles[opponentCarClassNames(i)]}
-          style={{ left: -390 }}
+          style={{ left: car.currentPlace }}
         >
           <img src={car.carImg} alt={car.name} className={styles.carImage} />
         </div>
@@ -28,7 +65,14 @@ const Track = () => {
   const renderOpponentCarNames = () => {
     return opponentCars.map((car, i) => {
       return (
-        <span className={styles[opponentCarNameClassNames(i)]}>{car.name}</span>
+        <span
+          key={car.name}
+          className={`${styles.carName} ${
+            styles[opponentCarNameClassNames(i)]
+          }`}
+        >
+          {car.name}
+        </span>
       );
     });
   };
@@ -44,16 +88,35 @@ const Track = () => {
       </div>
       <span className={styles.startLine}></span>
       <span className={styles.finishLine}></span>
-      <div className={styles.selectedCar} style={{ left: -390 }}>
+      <div
+        className={styles.selectedCar}
+        style={{ left: selectedCar.currentPlace }}
+      >
         <img
           src={selectedCar.carImg}
           alt={selectedCar.name}
           className={styles.carImage}
         />
       </div>
-      <span className={styles.yourCarText}>Your Car</span>
+      <span className={`${styles.carName} ${styles.yourCarText}`}>
+        Your Car
+      </span>
       {renderOpponentCars()}
       {renderOpponentCarNames()}
+
+      <div className={styles.buttonsContainer}>
+        {!isRaceStarted && !isRaceFinished && (
+          <button onClick={startRaceHandler} className={styles.startRaceButton}>
+            Start The Race!
+          </button>
+        )}
+        {!isRaceStarted && isRaceFinished && (
+          <div>
+            <button>Race Again!</button>
+            <button>Change My Car</button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
