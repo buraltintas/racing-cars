@@ -5,8 +5,6 @@ import { getRandomSpeed } from '../../../utils/get-random-speed';
 import useInterval from '../../../utils/use-interval';
 import Dashboard from './dashboard';
 
-let interval;
-
 const Track = () => {
   const dispatch = useDispatch();
 
