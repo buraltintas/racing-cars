@@ -2,6 +2,7 @@
   position: relative;
   width: 1024px;
   margin: 0 auto;
+  margin-top: 8px;
   height: calc(100vh - 16px);
   border-radius: 8px;
 }
