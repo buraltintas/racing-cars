@@ -58,9 +58,13 @@ const carsReducer = (state = initialState, action) => {
           selectedCar: {
             ...state.selectedCar,
             currentPlace:
-              state.selectedCar.currentPlace < 700
+              state.selectedCar.currentPlace < 575
                 ? state.selectedCar.currentPlace + action.payload
                 : state.selectedCar.currentPlace,
+            time:
+              state.selectedCar.currentPlace < 575
+                ? Math.floor(new Date().getTime() / 1000)
+                : state.selectedCar.time,
           },
         };
       } else {
@@ -69,9 +73,13 @@ const carsReducer = (state = initialState, action) => {
             return {
               ...car,
               currentPlace:
-                car.currentPlace < 700
+                car.currentPlace < 575
                   ? car.currentPlace + action.payload
                   : car.currentPlace,
+              time:
+                car.currentPlace < 575
+                  ? Math.floor(new Date().getTime() / 1000)
+                  : car.time,
             };
           }
           return car;

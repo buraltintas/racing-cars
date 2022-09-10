@@ -9,6 +9,7 @@ const Track = () => {
   const dispatch = useDispatch();
 
   const [racingCars, setRacingCars] = useState([]);
+  const [result, setResult] = useState([]);
 
   const { selectedCar, opponentCars, isRaceStarted, isRaceFinished } =
     useSelector((state) => state);
@@ -17,7 +18,7 @@ const Track = () => {
     racingCars.forEach((car) => {
       moveCarHandler(car);
     });
-  }, [1000]);
+  }, [500]);
 
   useEffect(() => {
     const racingCars = [selectedCar, ...opponentCars];
@@ -27,6 +28,15 @@ const Track = () => {
     if (racingCars.every((car) => car.currentPlace >= 575)) {
       dispatch({ type: 'SET_RACE_STARTED', payload: false });
       dispatch({ type: 'SET_RACE_FINISHED', payload: true });
+    }
+  }, [selectedCar, opponentCars, dispatch]);
+
+  useEffect(() => {
+    const racingCars = [selectedCar, ...opponentCars];
+
+    if (racingCars.some((car) => car.currentPlace >= 575)) {
+      const newArray = racingCars.map((car) => car.currentPlace >= 575);
+      setResult((prev) => [...prev, ...newArray]);
     }
   }, [selectedCar, opponentCars]);
 
@@ -81,10 +91,12 @@ const Track = () => {
 
   const resetCars = () => {
     dispatch({ type: 'RESET_CARS' });
+    setResult([]);
   };
 
   const raceAgain = () => {
     dispatch({ type: 'RACE_AGAIN' });
+    setResult([]);
   };
 
   return (
@@ -135,7 +147,11 @@ const Track = () => {
       )}
 
       {(isRaceStarted || isRaceFinished) && (
-        <Dashboard racingCars={racingCars} selectedCar={selectedCar} />
+        <Dashboard
+          racingCars={racingCars}
+          result={result}
+          selectedCar={selectedCar}
+        />
       )}
     </div>
   );

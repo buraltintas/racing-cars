@@ -1,20 +1,22 @@
 import { useEffect, useState } from 'react';
 import styles from './dashboard.module.css';
 
-const Dashboard = ({ racingCars, selectedCar }) => {
+const Dashboard = ({ racingCars, selectedCar, result }) => {
   const [sortedRacingCars, setSortedRacingCars] = useState([]);
 
   useEffect(() => {
-    const sortedArray = racingCars?.sort((a, b) => {
-      return b.currentPlace - a.currentPlace;
+    const sortedArray = racingCars.sort((a, b) => {
+      return result?.length > 0
+        ? a.time - b.time
+        : b.currentPlace - a.currentPlace;
     });
 
     setSortedRacingCars(sortedArray);
-  }, [racingCars]);
+  }, [racingCars, result]);
 
   return (
     <div>
-      {sortedRacingCars.map((car, i) => {
+      {sortedRacingCars?.map((car, i) => {
         return (
           <div key={car.name} className={styles.dashboardContainer}>
             <div className={styles.dashboardItem}>
