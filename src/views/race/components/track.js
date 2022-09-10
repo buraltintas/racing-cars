@@ -1,12 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './track.module.css';
 import { getRandomSpeed } from '../../../utils/get-random-speed';
+import Dashboard from './dashboard';
 
 let interval;
 
 const Track = () => {
   const dispatch = useDispatch();
+
+  const [racingCars, setRacingCars] = useState([]);
+
   const { selectedCar, opponentCars, isRaceStarted, isRaceFinished } =
     useSelector((state) => state);
 
@@ -18,12 +22,12 @@ const Track = () => {
         moveCarHandler(car);
       });
     }
-
-    return () => clearInterval(interval);
   }, [isRaceStarted]);
 
   useEffect(() => {
     const racingCars = [selectedCar, ...opponentCars];
+
+    setRacingCars(racingCars);
 
     if (racingCars.some((car) => car.currentPlace >= 575)) {
       dispatch({ type: 'SET_RACE_STARTED', payload: false });
@@ -114,6 +118,7 @@ const Track = () => {
       <span className={`${styles.carName} ${styles.yourCarText}`}>
         Your Car
       </span>
+
       {renderOpponentCars()}
       {renderOpponentCarNames()}
 
@@ -134,6 +139,10 @@ const Track = () => {
             Change My Car
           </button>
         </div>
+      )}
+
+      {(isRaceStarted || isRaceFinished) && (
+        <Dashboard racingCars={racingCars} />
       )}
     </div>
   );
