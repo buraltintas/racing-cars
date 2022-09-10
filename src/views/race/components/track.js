@@ -24,7 +24,7 @@ const Track = () => {
 
     setRacingCars(racingCars);
 
-    if (racingCars.some((car) => car.currentPlace >= 575)) {
+    if (racingCars.every((car) => car.currentPlace >= 575)) {
       dispatch({ type: 'SET_RACE_STARTED', payload: false });
       dispatch({ type: 'SET_RACE_FINISHED', payload: true });
     }

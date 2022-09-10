@@ -57,13 +57,22 @@ const carsReducer = (state = initialState, action) => {
           ...state,
           selectedCar: {
             ...state.selectedCar,
-            currentPlace: state.selectedCar.currentPlace + action.payload,
+            currentPlace:
+              state.selectedCar.currentPlace < 700
+                ? state.selectedCar.currentPlace + action.payload
+                : state.selectedCar.currentPlace,
           },
         };
       } else {
         const newArray = state.opponentCars.map((car) => {
           if (car['name'] === action.name) {
-            return { ...car, currentPlace: car.currentPlace + action.payload };
+            return {
+              ...car,
+              currentPlace:
+                car.currentPlace < 700
+                  ? car.currentPlace + action.payload
+                  : car.currentPlace,
+            };
           }
           return car;
         });
