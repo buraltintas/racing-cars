@@ -5,7 +5,7 @@ import Title from './components/title';
 const CarSelection = () => {
   return (
     <Container>
-      <Title />
+      <Title title={'Select Your Car'} />
       <Cars />
     </Container>
   );

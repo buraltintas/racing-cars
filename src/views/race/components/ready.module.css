@@ -1,0 +1,116 @@
+.readyContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.yourCarContainer {
+  margin: 0 auto;
+  margin-bottom: -24px;
+}
+
+.yourCarTitle {
+  text-align: center;
+}
+
+.carImage {
+  width: 470px;
+  border-radius: 16px;
+  transform: translateY(-16px);
+}
+
+.carDetails {
+  padding: 8px 8px 24px 8px;
+  background-color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  border-radius: 8px;
+}
+
+.carInfo {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pilotImage {
+  width: 80px;
+  border-radius: 16px;
+}
+
+.carName {
+  font-size: 24px;
+  color: #666;
+  font-weight: 600;
+}
+
+.pilotName {
+  color: #444;
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: -16px;
+  margin-bottom: 16px;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.buttons button {
+  letter-spacing: 1.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: #e00400;
+  color: #fff;
+  border: 2px solid #e00400;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 180px;
+  transition: all 0.3s;
+}
+
+.buttons button:last-child {
+  background-color: #fff;
+  color: #e00400;
+  border: 2px solid #fff;
+  font-size: 14px;
+}
+
+.buttons button:hover {
+  border: 2px solid #fff;
+}
+
+.buttons button:last-child:hover {
+  border: 2px solid #e00400;
+}
+
+.opponentCars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.opponentCarDetails {
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  border-radius: 8px;
+  width: 320px;
+}
+
+.opponentPilotImage {
+  width: 80px;
+  border-radius: 16px;
+}
