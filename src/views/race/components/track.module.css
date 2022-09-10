@@ -1,0 +1,126 @@
+.trackFieldContainer {
+  position: relative;
+  width: 1024px;
+  margin: 0 auto;
+  height: calc(100vh - 16px);
+  border-radius: 8px;
+}
+
+.trackField {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0 0 4px white;
+}
+
+.line {
+  width: 100%;
+  height: 10px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.startLine {
+  background-color: white;
+  position: absolute;
+  height: 450px;
+  width: 10px;
+  left: 1000px;
+  top: 0;
+}
+
+.finishLine {
+  background-color: white;
+  position: absolute;
+  height: 450px;
+  width: 10px;
+  left: 50px;
+  top: 0;
+}
+
+.selectedCar {
+  position: absolute;
+  top: 20px;
+  left: -390px;
+  height: 80px;
+  transition: all 1s;
+}
+
+.opponentCar1 {
+  position: absolute;
+  top: 130px;
+  left: -390px;
+  height: 80px;
+  transition: all 1s;
+}
+
+.opponentCar2 {
+  position: absolute;
+  top: 240px;
+  left: -390px;
+  height: 80px;
+  transition: all 1s;
+}
+
+.opponentCar3 {
+  position: absolute;
+  top: 350px;
+  left: -390px;
+  height: 80px;
+  transition: all 1s;
+}
+
+.carImage {
+  height: 80px;
+  border-radius: 16px;
+}
+
+.yourCarText {
+  position: absolute;
+  color: #fafafa79;
+  font-size: 36px;
+  letter-spacing: 10px;
+  font-style: italic;
+  font-weight: 600;
+  top: 35px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.opponentCarName1 {
+  position: absolute;
+  color: #fafafa79;
+  font-size: 36px;
+  letter-spacing: 10px;
+  font-style: italic;
+  font-weight: 600;
+  top: 148px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.opponentCarName2 {
+  position: absolute;
+  color: #fafafa79;
+  font-size: 36px;
+  letter-spacing: 10px;
+  font-style: italic;
+  font-weight: 600;
+  top: 252px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.opponentCarName3 {
+  position: absolute;
+  color: #fafafa79;
+  font-size: 36px;
+  letter-spacing: 10px;
+  font-style: italic;
+  font-weight: 600;
+  top: 360px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

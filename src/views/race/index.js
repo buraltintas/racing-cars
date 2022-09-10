@@ -1,12 +1,12 @@
-import Container from '../car-selection/components/container';
+import { useSelector } from 'react-redux';
+import Container from './components/container';
 import Ready from './components/ready';
+import Track from './components/track';
 
 const Race = () => {
-  return (
-    <Container>
-      <Ready />
-    </Container>
-  );
+  const isUserReady = useSelector((state) => state.isUserReady);
+
+  return <Container>{!isUserReady ? <Ready /> : <Track />}</Container>;
 };
 
 export default Race;

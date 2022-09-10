@@ -12,7 +12,11 @@ const Ready = () => {
   const opponentCars = useSelector((state) => state.opponentCars);
 
   const changeCarHandler = () => {
-    dispatch({ type: 'SELECT_CAR', payload: null });
+    dispatch({ type: 'SET_SELECTED_CAR', payload: null });
+  };
+
+  const userReadyHandler = () => {
+    dispatch({ type: 'SET_USER_READY', payload: true });
   };
 
   useEffect(() => {
@@ -24,7 +28,7 @@ const Ready = () => {
   const renderOpponentCars = () => {
     return opponentCars.map((car) => {
       return (
-        <div className={styles.opponentCarDetails}>
+        <div key={car.name} className={styles.opponentCarDetails}>
           <img
             src={car.pilotImg}
             alt={car.pilot}
@@ -44,7 +48,7 @@ const Ready = () => {
       <>
         <Title title={'Are You Ready?'} />
         <div className={styles.buttons}>
-          <button>
+          <button onClick={userReadyHandler}>
             <RaceFlagIcon class={styles.icon} />
             YES!
           </button>

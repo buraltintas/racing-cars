@@ -2,8 +2,17 @@ import { legacy_createStore as createStore } from 'redux';
 import { cars } from '../constants/cars';
 import { getRandomOpponents } from '../utils/get-random-opponents';
 
-const carsReducer = (state = { selectedCar: null, cars: cars }, action) => {
-  if (action.type === 'SELECT_CAR') {
+const initialState = {
+  selectedCar: null,
+  cars: cars,
+  isUserReady: false,
+  isGameStarted: false,
+  isGameFinished: false,
+  opponentCars: [],
+};
+
+const carsReducer = (state = initialState, action) => {
+  if (action.type === 'SET_SELECTED_CAR') {
     return {
       ...state,
       selectedCar: action.payload,
@@ -16,6 +25,12 @@ const carsReducer = (state = { selectedCar: null, cars: cars }, action) => {
     return {
       ...state,
       opponentCars: getRandomOpponents(carsWithoutSelected, 3),
+    };
+  }
+  if (action.type === 'SET_USER_READY') {
+    return {
+      ...state,
+      isUserReady: action.payload,
     };
   }
 

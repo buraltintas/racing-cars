@@ -5,7 +5,7 @@ const CarSelectionItem = ({ car }) => {
   const dispatch = useDispatch();
 
   const selectCarHandler = () => {
-    dispatch({ type: 'SELECT_CAR', payload: car });
+    dispatch({ type: 'SET_SELECTED_CAR', payload: car });
     dispatch({ type: 'SET_OPPONENT_CARS' });
   };
 
