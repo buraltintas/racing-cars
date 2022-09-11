@@ -78,6 +78,5 @@ export const cars = [
     name: '?',
     pilot: '?',
     carImg: randomCar,
-    pilotImg: vettel,
   },
 ];
