@@ -139,13 +139,21 @@
   transition: all 0.3s;
 }
 
-.startRaceButton:last-child {
+.changeCarButton {
   background-color: #fff;
   color: #e00400;
   border: 2px solid #fff;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 280px;
+  margin-top: 8px;
+  transition: all 0.3s;
 }
 
-.startRaceButton:last-child:hover {
+.changeCarButton:hover {
   border: 2px solid #e00400;
 }
 

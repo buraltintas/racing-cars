@@ -131,7 +131,7 @@ const Track = () => {
           <button onClick={raceAgain} className={styles.startRaceButton}>
             Race Again!
           </button>
-          <button onClick={resetCars} className={styles.startRaceButton}>
+          <button onClick={resetCars} className={styles.changeCarButton}>
             Change My Car
           </button>
         </div>
