@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styles from './dashboard.module.css';
 
-const Dashboard = ({ racingCars, selectedCar, result }) => {
+const Dashboard = ({ racingCars, selectedCar }) => {
   const [sortedRacingCars, setSortedRacingCars] = useState([]);
   const { isRaceFinished } = useSelector((state) => state);
 
@@ -12,7 +12,7 @@ const Dashboard = ({ racingCars, selectedCar, result }) => {
     });
 
     setSortedRacingCars(sortedArray);
-  }, [racingCars, result, isRaceFinished]);
+  }, [racingCars, isRaceFinished]);
 
   return (
     <div>
