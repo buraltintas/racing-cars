@@ -96,8 +96,10 @@ const Track = () => {
         <span className={styles.line}></span>
         <span className={styles.line}></span>
       </div>
+
       <span className={styles.startLine}></span>
       <span className={styles.finishLine}></span>
+
       <div
         className={styles.selectedCar}
         style={{ left: selectedCar.currentPlace }}
@@ -108,6 +110,7 @@ const Track = () => {
           className={styles.carImage}
         />
       </div>
+
       <span className={`${styles.carName} ${styles.yourCarText}`}>
         Your Car
       </span>

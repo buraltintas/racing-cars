@@ -98,15 +98,15 @@
 }
 
 .opponentCarName1 {
-  top: 148px;
+  top: 150px;
 }
 
 .opponentCarName2 {
-  top: 252px;
+  top: 255px;
 }
 
 .opponentCarName3 {
-  top: 360px;
+  top: 365px;
 }
 
 .buttonsContainer {
@@ -137,6 +137,16 @@
   width: 280px;
   margin-top: 8px;
   transition: all 0.3s;
+}
+
+.startRaceButton:last-child {
+  background-color: #fff;
+  color: #e00400;
+  border: 2px solid #fff;
+}
+
+.startRaceButton:last-child:hover {
+  border: 2px solid #e00400;
 }
 
 .startRaceButton:hover {
