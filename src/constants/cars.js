@@ -4,6 +4,7 @@ import alphatauri from './car-photos/alphatauri.png';
 import mclaren from './car-photos/mclaren.png';
 import redbull from './car-photos/redbull.png';
 import astonmartin from './car-photos/astonmartin.png';
+import randomCar from './car-photos/random-car.png';
 
 import hamilton from './pilot-photos/hamilton.png';
 import norris from './pilot-photos/norris.png';
@@ -72,5 +73,11 @@ export const cars = [
     startPlace: -390,
     finishPlace: 550,
     currentPlace: -390,
+  },
+  {
+    name: '?',
+    pilot: '?',
+    carImg: randomCar,
+    pilotImg: vettel,
   },
 ];

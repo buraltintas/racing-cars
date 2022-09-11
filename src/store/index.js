@@ -1,6 +1,7 @@
 import { legacy_createStore as createStore } from 'redux';
 import { cars } from '../constants/cars';
 import { getRandomOpponents } from '../utils/get-random-opponents';
+import { getRandomCar } from '../utils/get-random-car';
 
 const initialState = {
   selectedCar: null,
@@ -19,10 +20,22 @@ const carsReducer = (state = initialState, action) => {
     };
   }
 
+  if (action.type === 'SET_RANDOM_SELECTED_CAR') {
+    const carsWithoutRandom = cars.filter((x) => x.name !== '?');
+
+    return {
+      ...state,
+      selectedCar: getRandomCar(carsWithoutRandom),
+    };
+  }
+
   if (action.type === 'SET_OPPONENT_CARS') {
-    const carsWithoutSelected = cars.filter(
+    const carsWithoutRandom = cars.filter((x) => x.name !== '?');
+
+    const carsWithoutSelected = carsWithoutRandom.filter(
       (x) => x.name !== state.selectedCar.name
     );
+
     return {
       ...state,
       opponentCars: getRandomOpponents(carsWithoutSelected, 3),
