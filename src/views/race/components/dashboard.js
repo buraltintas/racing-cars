@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import styles from './dashboard.module.css';
 
 const Dashboard = ({ racingCars, selectedCar, result }) => {
   const [sortedRacingCars, setSortedRacingCars] = useState([]);
+  const { isRaceFinished } = useSelector((state) => state);
 
   useEffect(() => {
     const sortedArray = racingCars.sort((a, b) => {
-      return result?.length > 0
-        ? a.time - b.time
-        : b.currentPlace - a.currentPlace;
+      return isRaceFinished ? a.time - b.time : b.currentPlace - a.currentPlace;
     });
 
     setSortedRacingCars(sortedArray);
-  }, [racingCars, result]);
+  }, [racingCars, result, isRaceFinished]);
 
   return (
     <div>
